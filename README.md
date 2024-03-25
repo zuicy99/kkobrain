@@ -9,6 +9,5 @@
 
 ## 2. 프론트엔드/Reacts(JS 버전)
 
-- 리액트 마이그레이션 ([https://kkobrain-fawn.vercel.app/](https://vercel.com/juyoungs-projects-ecf11f18/kkobrain-juyoung99)https://vercel.com/juyoungs-projects-ecf11f18/kkobrain-juyoung99)
-
+- 리액트 마이그레이션 (https://kkobrain-juyoung99.vercel.app/)https://kkobrain-juyoung99.vercel.app/
 ## 3. 프론트엔드/Reacts(TS 버전)
