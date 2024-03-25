@@ -272,6 +272,7 @@ window.addEventListener("load", function () {
     return swBannerElement;
   };
 });
+
 // Card 데이터 출력
 window.addEventListener("load", function () {
   // 초기로딩시 처리
