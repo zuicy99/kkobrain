@@ -9,4 +9,4 @@
 
 ## 2. 프론트엔드/Reacts(JS 버전)
 
-- 리액트 마이그레이션 (https://kkobrain-fawn.vercel.app/)
+- 리액트 마이그레이션 (https://kkobrain-juyoung99.vercel.app/)
