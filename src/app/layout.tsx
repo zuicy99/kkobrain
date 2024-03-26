@@ -12,7 +12,12 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <head></head>
+      <head>
+        <meta
+          name="naver-site-verification"
+          content="18932c563ca8c7600147e0f60244307d7b421797"
+        />
+      </head>
       <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <div id="root">{children}</div>

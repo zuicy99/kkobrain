@@ -1,3 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://kkobrain-six.vercel.app
+
+# Sitemaps
+Sitemap: https://kkobrain-six.vercel.app/sitemap.xml
