@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { IBanner } from "../../types/type";
 import axios, { AxiosResponse } from "axios";
-import { error } from "console";
 
 export const MainTop = () => {
   const path = "./images";
