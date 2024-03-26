@@ -17,7 +17,7 @@ export const MainTop = () => {
   const swiperOption = {
     loop: true,
     autoplay: {
-      delay: 2500,
+      delay: 500,
       disableOnInteraction: false,
     },
     pagination: {
