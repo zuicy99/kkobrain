@@ -4,7 +4,14 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:@next/next/recommended",
+    "eslint:recommended",
+    "next/core-web-vitals",
+  ],
   overrides: [],
   parserOptions: {
     ecmaVersion: "latest",
