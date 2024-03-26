@@ -6,6 +6,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { IBanner } from "../../types/type";
+import axios, { AxiosResponse } from "axios";
+import { error } from "console";
 
 export const MainTop = () => {
   const path = "./images";
@@ -16,7 +18,7 @@ export const MainTop = () => {
   const swiperOption = {
     loop: true,
     autoplay: {
-      delay: 2500,
+      delay: 500,
       disableOnInteraction: false,
     },
     pagination: {
@@ -24,59 +26,57 @@ export const MainTop = () => {
     },
     modules: [Pagination, Autoplay],
     onInit: (swiper: SwiperInit | null) => {
+      // useRef 를 Swiper 보관용으로
       swBanner.current = swiper;
+      // console.log(swBanner.current)
     },
   };
 
   const handelMouseEnterBanner = () => {
-    // if (swBanner.current.swiper) {
-    //   swBanner.current.swiper.autoplay.stop();
-    // }
-    if (swBanner.current) {
-      swBanner.current.autoplay.stop();
-    }
+    swBanner.current?.autoplay.stop();
   };
   const handelMouseLeaveBanner = () => {
-    // if (swBanner.current.swiper) {
-    //   swBanner.current.swiper.autoplay.start();
-    // }
-    if (swBanner.current) {
-      swBanner.current.autoplay.start();
-    }
+    swBanner.current?.autoplay.start();
   };
 
   const getBannerList = () => {
     const jsonUrl = "./api/banner.json";
-    fetch(jsonUrl)
-      .then(res => {
-        return res.json();
-      })
-      .then(data => {
-        setBannerList(data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    // fetch(jsonUrl)
+    //   .then(res => {
+    //     return res.json();
+    //   })
+    //   .then(data => {
+    //     setBannerList(data);
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
+
+    // axios 는 가져온 자료를 data 속성에 담아둠.
+    axios
+      .get<IBanner[]>(jsonUrl)
+      .then((response: AxiosResponse<IBanner[], any>) =>
+        setBannerList(response.data),
+      )
+      .catch(error => console.log(error));
   };
   useEffect(() => {
     getBannerList();
-    swBanner.current = new SwiperInit(".swBanner", swiperOption);
   }, []);
   return (
     <section className="main-top">
       <div className="main-banner">
         {/* <!-- start : 슬라이드 넣기 --> */}
-        <div className="banner-wrap">
-          <Swiper
-            // ref={swBanner}
-            className="swBanner"
-            onMouseEnter={() => {
-              handelMouseEnterBanner();
-            }}
-            onMouseLeave={() => {
-              handelMouseLeaveBanner();
-            }}
-          >
+        <div
+          className="banner-wrap"
+          onMouseEnter={() => {
+            handelMouseEnterBanner();
+          }}
+          onMouseLeave={() => {
+            handelMouseLeaveBanner();
+          }}
+        >
+          <Swiper {...swiperOption} className="swBanner">
             {banneerList.map(item => {
               return (
                 <SwiperSlide key={item.id}>

@@ -35,29 +35,19 @@ export const Header = () => {
       disableOnInteraction: false,
     },
     onInit: (swiper: SwiperInit | null) => {
+      // useRef 를 이용해서 Swiper 를 저장한다.
       swHeaderLogo.current = swiper;
+      // console.log("상단 슬라이드", swHeaderLogo.current);
+      swHeaderLogo.current?.autoplay.stop();
     },
   };
 
   const handleMouseEnter = () => {
-    // if (swHeaderLogo.current?.swiper) {
-    //   swHeaderLogo.current?.swiper.autoplay.start();
-    // }
-    if (swHeaderLogo.current) {
-      swHeaderLogo.current.autoplay.start();
-    }
+    swHeaderLogo.current?.autoplay.start();
   };
   const handleMouseLeave = () => {
-    // if (swHeaderLogo.current?.swiper) {
-    //   swHeaderLogo.current?.swiper.autoplay.stop();
-    //   // // 첫 번째 슬라이드로 강제로 이동시킨다.
-    //   swHeaderLogo.current?.swiper.slideTo(1);
-    // }
-    if (swHeaderLogo.current) {
-      swHeaderLogo.current.autoplay.stop();
-      // // 첫 번째 슬라이드로 강제로 이동시킨다.
-      swHeaderLogo.current.slideTo(1);
-    }
+    swHeaderLogo.current?.autoplay.stop();
+    swHeaderLogo.current?.slideTo(1);
   };
 
   // 반응형 메뉴
@@ -83,11 +73,6 @@ export const Header = () => {
   };
 
   useEffect(() => {
-    // console.log(swHeaderLogo.current.swiper.autoplay);
-    // swHeaderLogo.current.swiper.autoplay.stop();
-    swHeaderLogo.current = new SwiperInit(".swLogo", swiperOption);
-    swHeaderLogo.current?.autoplay.stop();
-
     window.addEventListener("resize", function () {
       if (window.innerWidth >= 1024) {
         setIsOpen(false);
@@ -141,17 +126,7 @@ export const Header = () => {
               className="logo-kakao"
             />
             {/* <!-- Start 로고 슬라이더 --> */}
-            <Swiper
-              className="swLogo"
-              // ref={swHeaderLogo}
-              // modules={[EffectFade, Autoplay]}
-              // effect="fade"
-              // speed={500}
-              // autoplay={{
-              //   delay: 200,
-              //   disableOnInteraction: false,
-              // }}
-            >
+            <Swiper className="swLogo" {...swiperOption}>
               <SwiperSlide>
                 <img src="./images/etc/logo-blog01.png" />
               </SwiperSlide>
