@@ -1,5 +1,5 @@
 # 카카오 브레인 블로그 React/Next 클론 프로젝트
-
+스터디를 위해 클론 코딩을 작업하셨습니다.
 ## 1. 웹퍼블리싱/vanilajs
 
 - html, css, js, swiper, filezilla
