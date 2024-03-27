@@ -9,14 +9,14 @@
 
 ## 2. 프론트엔드/Reacts(JS 버전)
 
-- 리액트 마이그레이션 (https://kkobrain-juyoung99.vercel.app/)
+- 리액트 마이그레이션 (https://kkobrain-six.vercel.app/)
 
 ## 3. 프론트엔드/Reacts(TS 버전)
 
-- 리액트 마이그레이션 (https://kkobrain-juyoung99.vercel.app/)
+- 리액트 마이그레이션 (https://kkobrain-six.vercel.app/)
 
 ## 4. 프론트엔드/Next.js
 
-- Next.js 마이그레이션 (https://kkobrain-juyoung99.vercel.app/)
+- Next.js 마이그레이션 (https://kkobrain-six.vercel.app/)
 
 ## 5. 네이버 등록 및 SEO 적용
